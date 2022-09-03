@@ -45,18 +45,12 @@ public class Lab4 {
     // Task 2
     public static String mergeString(String str1, String str2)
     {
-        int cnt1 = 0, cnt2 = 1;
+        int cnt1 = 0, cnt2 = 0;
         String res = "";
         while (cnt1 < str1.length() && cnt2 < str2.length())
         {
-            if (cnt1 < cnt2)
-            {
-                res += str1.charAt(cnt1);
-                cnt1 += 2;
-                continue;
-            }
-            res += str2.charAt(cnt2);
-            cnt2 += 2;
+            res += str1.charAt(cnt1++);
+            res += str2.charAt(cnt2++);
         }
         if (str1.length() > str2.length())
             res += str1.substring(cnt1, str1.length() - 1);
@@ -75,11 +69,12 @@ public class Lab4 {
     public static int findAbsentV2(int[] array, int n)
     {
         int absent = array[0] + n, start = 0, end = array.length - 1;
-        while (end - start != 1)
+        while (end - start != 1) // находим крайний левый элемент массива бинарным поиском
         {
             int mid = start + (end - start) / 2;
-            if (array[mid] == absent)
+            if (array[mid] == absent) // если попали на существующий элемент массива
             {
+                // добавляем кол-во элементов массива до найденного (mid)
                 for (int i = 0; i < mid || (i == mid && mid + 1 < array.length && absent == array[mid + 1]); ++i)
                 {
                     if (mid + 1 >= array.length)
@@ -98,6 +93,7 @@ public class Lab4 {
             else
                 start = mid;
         }
+        // если не попали на существующий элемент массива, используем крайних слева
         for (int i = 0; i < start || (i == start && start + 1 < array.length && absent == array[start + 1]); ++i)
         {
             if (start + 1 >= array.length)
