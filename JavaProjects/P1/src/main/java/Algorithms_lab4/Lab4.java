@@ -46,18 +46,17 @@ public class Lab4 {
     public static String mergeString(String str1, String str2)
     {
         int cnt1 = 0, cnt2 = 0;
-        String res = "";
+        StringBuilder res = new StringBuilder();
         while (cnt1 < str1.length() && cnt2 < str2.length())
         {
-            res += str1.charAt(cnt1++);
-            res += str2.charAt(cnt2++);
+            res.append(str1.charAt(cnt1++));
+            res.append(str2.charAt(cnt2++));
         }
         if (str1.length() > str2.length())
-            res += str1.substring(cnt1, str1.length() - 1);
+            res.append(str1.substring(cnt1, str1.length() - 1));
         else if (str1.length() < str2.length())
-            res += str2.substring(cnt2, str2.length() - 1);
-        return res;
-    }
+            res.append(str2.substring(cnt2, str2.length() - 1));
+        return res.toString();
     // Task 3, difficulty O(n)
     public static int findAbsent(int[] array, int n)
     {
