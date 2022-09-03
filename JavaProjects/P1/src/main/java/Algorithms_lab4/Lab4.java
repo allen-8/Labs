@@ -73,6 +73,9 @@ public class Lab4 {
             int mid = start + (end - start) / 2;
             if (array[mid] == absent) // если попали на существующий элемент массива
             {
+                // если результат больше последнего элемента, просто прибавляем длину всего массива и возвращаем результат
+                if (absent + mid > array[array.length - 1])
+                    return absent + array.length - 1;
                 // добавляем кол-во элементов массива до найденного (mid)
                 for (int i = 0; i < mid || (i == mid && mid + 1 < array.length && absent == array[mid + 1]); ++i)
                 {
@@ -92,7 +95,9 @@ public class Lab4 {
             else
                 start = mid;
         }
-        // если не попали на существующий элемент массива, используем крайних слева
+        if (absent + start > array[array.length - 1])
+            return absent + array.length - 1;
+        // если не попали на существующий элемент массива, используем крайний слева
         for (int i = 0; i < start || (i == start && start + 1 < array.length && absent == array[start + 1]); ++i)
         {
             if (start + 1 >= array.length)
