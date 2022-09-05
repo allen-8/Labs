@@ -1,5 +1,7 @@
 package Java_lab8;
+import java.util.HashSet;
 import java.util.Iterator;
+import java.util.Set;
 
 public class DoubleLinkedList implements MyList
 {
@@ -189,5 +191,17 @@ public class DoubleLinkedList implements MyList
         if (head == null)
             throw new NullPointerException();
         return tail.getValue();
+    }
+    public static void main(String[]args)
+    {
+        String [] words = new String[] {"One", "Two", "Three", "Four", "One", "Five", "Three"};
+        Set<String> set = new HashSet<>();
+        for (String s : words)
+        {
+            int cnt = set.size();
+            set.add(s);
+            if (set.size() == cnt)
+                System.out.println(s);
+        }
     }
 }
