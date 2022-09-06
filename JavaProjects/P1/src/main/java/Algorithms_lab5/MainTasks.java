@@ -49,9 +49,12 @@ public class MainTasks
     }
     public static void main(String[] args)
     {
+        // Худший случай: {15, 14, 13, 12, 11, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9} при индексе 5 (число 10) - максимальное кол-во swap-ов
+        // Test
         int[] array = {45, 7, 3, 89, 24, 90, 6, 43};
         quickSort(array, 0, array.length - 1, 4);
         for (int i : array)
             System.out.print(i + " ");
+        
     }
 }
