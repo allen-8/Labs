@@ -55,6 +55,5 @@ public class MainTasks
         quickSort(array, 0, array.length - 1, 4);
         for (int i : array)
             System.out.print(i + " ");
-        
     }
 }
