@@ -41,8 +41,7 @@ public class Lab10
         List<String> list = List.of(str.split(" "));
         Set<StringCounter> coll = new HashSet<>();
         for (String i : list)
-            if (Collections.frequency(list, i) > 1)
-                coll.add(new StringCounter(i, Collections.frequency(list, i)));
+            coll.add(new StringCounter(i, Collections.frequency(list, i)));
         return coll;
     }
     public static void main(String[] args)
