@@ -11,8 +11,7 @@ public class Tasks
         for (int i : set)
         {
             if (Collections.frequency(list, i) % 2 == 1)
-                while (list.contains(i))
-                    list.remove((Integer)i);
+                list.removeIf(integer -> integer == i);
         }
     }
     // Task 6
