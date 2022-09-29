@@ -5,7 +5,7 @@ import java.util.TreeMap;
 import java.util.TreeSet;
 
 public class BinaryTreeTester {
-
+    // Task 2
     public static TreeMap<String, TreeSet<String>> getMap(List<String> list)
     {
         TreeMap<String, TreeSet<String>> map = new TreeMap<>();
