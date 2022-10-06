@@ -181,6 +181,18 @@ public class MyLinkedList implements MyList {
         l.add(2);
         l.add(3);
         System.out.println(l);
+        /*public static int middle(Node node, int n, arr[] res)
+        {
+            if (node == null)
+                return n;
+            int d = middle(node.getNext(), ++n);
+            if ((d / 2 == n && d != -1) {
+            res = node.getData();
+            return -1;
+        }
+            return d;
+        }*/
+
     }
 }
 

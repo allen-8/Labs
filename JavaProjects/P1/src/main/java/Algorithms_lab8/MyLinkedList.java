@@ -2,12 +2,11 @@ package Algorithms_lab8;
 
 public class MyLinkedList
 {
-    private Node head, tail;
+    private Node head;
     private int size;
     public MyLinkedList(Node head)
     {
         this.head = head;
-        tail = head;
         size = 1;
     }
     @Override
@@ -70,8 +69,10 @@ public class MyLinkedList
             head = new Node(data);
             return;
         }
-        tail.setNext(new Node(data));
-        tail = tail.getNext();
+        Node n = head;
+        while (n.getNext() != null)
+            n = n.getNext();
+        n.setNext(new Node(data));
         ++size;
     }
     public void pushToHead(int data)
@@ -132,5 +133,8 @@ public class MyLinkedList
         n.setNext(n1);
         --size;
     }
-    public Node getLast() { return tail; }
+    public int getSize()
+    {
+        return size;
+    }
 }
