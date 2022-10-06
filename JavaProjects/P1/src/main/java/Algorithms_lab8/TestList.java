@@ -17,9 +17,7 @@ public class TestList {
     public static boolean checkLoops(MyLinkedList list)
     {
         try {
-            int i = 0;
-            for (; i < list.getSize(); ++i) {}
-            list.get(i);
+            list.get(list.getSize());
             return true;
         } catch (NullPointerException n) {
             return false;
