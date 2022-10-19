@@ -8,7 +8,10 @@ public class DogSerializer {
         Dog sharik = new Dog("Sharik", 3);
         serialize(sharik);
         Dog dog = deserialize();
-        System.out.println(dog.name + " " + dog.age);
+        if (dog != null)
+            System.out.println(dog.name + " " + dog.age);
+        else
+            System.out.println("Something went wrong...");
     }
     public static void serialize(Dog dog) throws IOException {
         Gson gson = new GsonBuilder().create();
